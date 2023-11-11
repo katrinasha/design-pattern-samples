@@ -20,6 +20,7 @@ public class Main {
         order1.updateLocation("Calgary, AB");
         order1.updateLocation("Winnipeg, MB");
         order1.updateLocation("Toronto, ON");
+        order1.updateDeliveryStatus();
 
 
     }

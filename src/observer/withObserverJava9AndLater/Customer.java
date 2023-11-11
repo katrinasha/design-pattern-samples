@@ -27,14 +27,18 @@ public class Customer implements PropertyChangeListener {
      */
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        if (evt.getPropertyName().equals("location")) {
+            System.out.println("Customer " + this.name + " observed a change in " +
+                    evt.getPropertyName() + " of " + evt.getSource());
+            System.out.println(
+                    evt.getOldValue() + " has changed to " + evt.getNewValue() + ". ");
 
-        System.out.println("Customer " + this.name + " observed a change in " +
-                evt.getPropertyName() + " of " + evt.getSource());
-
-        System.out.println(
-                evt.getOldValue() + " has changed to " + evt.getNewValue() + ". ");
-
-        System.out.println();
+            System.out.println();
+        } else { // It is a delivery status update
+            System.out.println("Customer " + this.name+ " observed a change in " + evt.getPropertyName() +  " of " +
+                    evt.getSource());
+            System.out.println("Customer " + this.name + " has received the parcel: " + evt.getNewValue().toString()+ ".");
+        }
     }
 
 

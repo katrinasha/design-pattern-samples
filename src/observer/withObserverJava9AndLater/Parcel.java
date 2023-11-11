@@ -47,6 +47,7 @@ public class Parcel {
      */
     public void addObserver(PropertyChangeListener observer) {
         observable.addPropertyChangeListener("location", observer);
+        observable.addPropertyChangeListener("delivery status", observer);
     }
 
 
@@ -64,4 +65,7 @@ public class Parcel {
     }
 
 
+    public void updateDeliveryStatus() {
+        observable.firePropertyChange("delivery status", null, true);
+    }
 }
